@@ -51,7 +51,7 @@ Rec-Prep: Receptor Preparation & Grid Map Generation Pipeline for AutoDock-GPU. 
 ```bibtex
 @software{recprep2026,
   title  = {Rec-Prep: Receptor Preparation & Grid Map Generation Pipeline for AutoDock-GPU},
-  author = {{Rec-Prep Contributors}},
+  author = {{Manav Patel}},
   year   = {2026},
   url    = {https://github.com/MANAV2502/Rec-Prep}
 }
