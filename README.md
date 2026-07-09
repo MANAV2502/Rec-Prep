@@ -1,10 +1,12 @@
-# Rec-Prep: Receptor Preparation & Grid Map Generation
+## Rec-Prep: Receptor Preparation & Grid Map Generation
 
 🧬 A Colab notebook (`Rec_Prep.ipynb`) automating the full rigid (+ optional flexible) receptor preparation pipeline for AutoDock-GPU, from a raw PDB file to a complete AutoGrid4 map set.
 
 ## Pipeline Steps
 
 Environment setup (condacolab, ADFRsuite, OpenBabel, PDB2PQR, py3Dmol) → target-pH configuration → PDB upload with chain/HETATM detection → optional non-metallic cofactor retention (dual-tool protonation: PDB2PQR + PROPKA3 for protein, OpenBabel for cofactors) → receptor-to-PDBQT conversion via `prepare_receptor4.py` with charge-conservation QC → optional flexible-residue definition and rigid/flex split via `prepare_flexreceptor4.py` → interactive 3D visualization → AutoSite pocket detection → six grid-box definition modes → GPF writing and `autogrid4` map generation → packaged download.
+
+**⚠️ Required step:** Always run the "Select Non-Metallic Cofactors to Retain" cell before Step 3, even with the field left blank, it performs the mandatory protein protonation that will be used further. Skipping it causes Step 3 to silently fall back to the raw, unprotonated PDB and crash with `KeyError: None`.
 
 ## ⚠️ Pre-Upload Cleanup (Required)
 
